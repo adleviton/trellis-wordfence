@@ -1,0 +1,19 @@
+- name: Create wordfence-waf.php file
+  template:
+    src: "wordfence-waf.php.j2"
+    dest: "{{ deploy_helper.new_release_path }}/web/wp/wordfence-waf.php"
+    owner: "{{ web_user }}"
+    group: "{{ web_group }}"
+
+# - name: Copy wordfence-waf.php file into /wp
+#   command: rsync -ac --info=NAME /tmp/user.ini {{ deploy_helper.new_release_path }}/web/wp/wordfence-waf.php
+
+- name: Create .user.ini file
+  template:
+    src: "user.ini.j2"
+    dest: "{{ deploy_helper.new_release_path }}/web/.user.ini"
+    owner: "{{ web_user }}"
+    group: "{{ web_group }}"
+
+# - name: Copy .user.ini file into /web
+#   command: rsync -ac --info=NAME /tmp/user.ini {{ deploy_helper.new_release_path }}/web/.user.ini

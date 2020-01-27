@@ -1,0 +1,8 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: adleviton
+  description: Role to set up a WordPress site on Trellis for the Wordfence plugin
+  license: "license (MIT)"
+  min_ansible_version: 2.4
